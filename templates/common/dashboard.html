@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    {% if not cars %}
+        <!-- Display paragraph: If there are no games-->
+        <section id="no-cars">
+            <p class="no-articles">No cars added yet</p>
+        </section>
+        <!-- Inside the <nav> tag -->
+
+
+    {% else %}
+
+        <!-- Display div "game" with information about every game (if any)-->
+        <section id="welcome-world">
+            {% for car in cars %}
+                <!-- first game-->
+                <div class="game">
+                    <div class="image-wrap">
+                        <!-- game image -->
+                        <img src="{{ car.image_url }}"
+                             alt="{{ car.brand }}">
+                    </div>
+                    <!-- game title -->
+                    <h3>{{ car.brand }}</h3>
+                    <!-- game category-->
+                    <h1>{{ car.model }}</h1>
+                    <div class="data-buttons">
+                        <!-- game details button -->
+                        <a href="{% url 'car-details-page' car.pk %}" class="btn details-btn">Details</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </section>
+    {% endif %}
+
+{% endblock %}

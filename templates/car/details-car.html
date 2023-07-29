@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- details section -->
+    <section id="game-details">
+        <h1>Car Details</h1>
+        <div class="info-section">
+            <div class="game-header">
+                <!-- game image -->
+                <img class="game-img"
+                     src="{{ car.image_url }}"
+                     alt='game image'/>
+                <!-- title and rating -->
+                <h1>{{ car.title }} {{ car.model }}</h1>
+                <span class="levels">Priority: {{ car.priority }}</span>
+                <!-- game category -->
+
+
+            </div>
+            <!-- game summary (if any)-->
+            {% if car.summary %}
+                <p class="text">{{ car.summary }}</p>
+            {% endif %}
+            <!-- Edit/Delete buttons -->
+            <div class="buttons">
+                <a href="{% url 'edit-car-page' car.pk %}" class="button">Edit</a>
+                <a href="{% url 'delete-car-page' car.pk %}" class="button">Delete</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

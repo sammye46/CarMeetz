@@ -1,0 +1,49 @@
+{#{% extends 'base.html' %}#}
+{#{% block content %}#}
+{#    <!-- Start Login Section-->#}
+{#    <div class="login-register-div">#}
+{#        <div class="login-register-box">#}
+{#            <h1>Login</h1>#}
+{##}
+{#            <!-- Start Login Form-->#}
+{#            <form action="login" method="post">#}
+{#                {% csrf_token %}#}
+{#                {{ form.username }}#}
+{#                {{ form.password }}#}
+{##}
+{#            </form>#}
+{#            <!-- End Login Form -->#}
+{#         <input class="btn submit" type="submit" value="Login. Profile">#}
+{#        </div>#}
+{#        <div class="second-option">#}
+{##}
+{#            <!-- Link to Register Page-->#}
+{#            <p>Don't have account? <a href="{% url 'create-profile'%}">Register</a></p>#}
+{#        </div>#}
+{#    </div>#}
+{#{% endblock %}#}
+
+{% extends 'base.html' %}
+{% load custom_filters %}
+{% block content %}
+    <!-- create profile form -->
+    <section id="register-page" class="content auth">
+        <form action="{% url 'login-profile' %}" method="post">
+            <div class="container">
+                <div class="brand-logo"></div>
+                <h1>Log in</h1>
+
+                {% csrf_token %}
+                {{ form.username }}
+                {{ form.password }}
+                <input type="hidden" value="{{ next }}" name="next"/>
+                <input class="btn submit" type="submit" value="Log in">
+            </div>
+        </form>
+        <div class="second-option">
+
+            <!-- Link to Register Page-->
+            <p style="color: white">Don't have an account? <a href="{% url 'create-profile' %}">Create profile</a></p>
+        </div>
+    </section>
+{% endblock %}

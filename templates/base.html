@@ -1,0 +1,63 @@
+{% load static %}
+{% load get_profile_tags %}
+{% get_user_profile as profile %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <title>CarMeetz</title>
+</head>
+
+<body>
+<div id="box">
+    <header>
+
+        <!-- Navigation Bar -->
+        <h1><a class="home" href="{% url 'home-page' %}">CarMeetz</a></h1>
+        <nav>
+            {% if not profile %}
+                <!-- if the user has not created a profile -->
+                <a href="{% url 'create-profile' %}">Create Profile</a>
+                <a href="{% url 'login-profile' %}">Log in</a>
+            {% elif profile and user.is_authenticated %}
+                <!-- if the user has created a profile -->
+                <a href="{% url 'dashboard-page' %}">Dashboard</a>
+                <!-- Inside the <nav> tag -->
+                {% if not cars and request.path == '/dashboard/' %}
+                    <a href="{% url 'create-car-page' %}" class="add-car-link">
+                        Add Car
+
+                        <span class="arrow-icon"></span>
+                    </a>
+                {% else %}
+                    <a href="{% url 'create-car-page' %}">Add Car</a>
+                {% endif %}
+
+                <a href="{% url 'profile-details' pk=request.user.pk %}">Profile</a>
+                <a href="{% url 'logout-profile' %}">Log out</a>
+            {% elif profile and not user.is_authenticated %}
+                <a href="{% url 'create-profile' %}">Create Profile</a>
+                <a href="{% url 'login-profile' %}">Log in</a>
+            {% endif %}
+        </nav>
+    </header>
+    {#    {% if user.is_authenticated %}#}
+    {#        <p style="color: white">Welcome, {{ user.username }}!</p>#}
+    {#    {% else %}#}
+    {#        <p style="color: white">Please log in.</p>#}
+    {#    {% endif %}#}
+
+    {% block content %}
+    {% endblock %}
+    <!-- footer -->
+    <footer>
+        &copy;Sammy Kayali. All rights reserved.
+    </footer>
+
+</div>
+</body>
+</html>

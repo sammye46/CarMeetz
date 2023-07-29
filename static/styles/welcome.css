@@ -1,0 +1,380 @@
+#welcome-world {
+    width: auto;
+    justify-content: right;
+    padding: 25px 15px 20px;
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#welcome-world .welcome-message {
+    display: inline-block;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    top: 40%;
+    text-align: center;
+    width: 30%
+}
+
+#welcome-world>img {
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 60%;
+    margin-left: auto;
+
+}
+
+.welcome-message h2 {
+    color: #ffffff;
+    font-size: 300%;
+
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-family: "Agency FB", serif;
+}
+
+.welcome-message h3 {
+    color: #ffffff;
+    font-size: 600%;
+    line-height: 1;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-family: "Agency FB", serif;
+}
+
+#welcome-world>#home-page {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+#home-page {
+    background-color: transparent;
+    box-shadow: 0 0 40px 0;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 55px;
+    height: auto;
+    width: auto;
+}
+
+/* styles/style.css */
+.arrow-icon {
+    /* This CSS creates a simple arrow using borders */
+    display: block;
+    margin: 18px 0 0 21px;
+    width: 0;
+    height: 0;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-bottom: 32px solid #fff; /* You can change the color here */
+    border-radius: 18px;
+    animation: bounce 2s ease-in-out infinite; /* Apply the bounce animation */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0); /* Starting and ending position */
+    }
+    40% {
+        transform: translateY(-10px); /* Bouncing up */
+    }
+    60% {
+        transform: translateY(-5px); /* Bouncing down */
+    }
+}
+
+
+.game {
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    padding: 50px;
+    margin-left: 50px;
+    background-position: right 35% bottom 45%;
+    box-sizing: border-box;
+    border-radius: 15px;
+    float: left;
+    height: auto;
+    color: rgb(255, 255, 255);
+}
+
+.image-wrap {
+    width: 250px;
+    height: 250px;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.image-wrap>img {
+    max-width: 100%;
+}
+
+.game>h3 {
+    font-family: "Agency FB", serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: normal;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.5s ease-out;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.game-content>h4 {
+    color: #c2d4f8;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.rating {
+    unicode-bidi: bidi-override;
+    text-align: center;
+    direction: rtl;
+}
+
+.rating span {
+    font-size: 40px;
+    padding: 4px;
+}
+
+.rating span:before {
+    content: "\2605";
+    position: absolute;
+    color: gold;
+}
+
+.details-btn {
+    background-color: #295160;
+    font-size: 1.4rem;
+    margin-top: 10px;
+    color: white;
+    padding: 0.9em 1.4em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.data-buttons {
+    font-size: 1.4rem;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.btn.details-btn:hover {
+    background-color: rgb(141, 41, 41);
+    color: white;
+}
+
+#home-page > h1 {
+    color: rgb(252, 168, 151);
+    text-align: center;
+    font-weight: 700;
+    font-size: 4rem;
+    font-family: "Agency FB", serif;
+}
+
+.no-articles {
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 3.75rem;
+    font-family: "Agency FB", serif;
+}
+
+
+
+
+
+
+
+
+/*body {*/
+/*    font-family: Arial, sans-serif;*/
+/*    background-color: #f1f1f1;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+/*#welcome-world {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: flex-end;*/
+/*    padding: 25px 15px 20px;*/
+/*    position: relative;*/
+/*    box-sizing: border-box;*/
+/*    text-align: center;*/
+/*}*/
+
+/*#welcome-world .welcome-message {*/
+/*    margin: 0 auto;*/
+/*    text-align: center;*/
+/*    width: 70%;*/
+/*}*/
+
+/*#welcome-world > img {*/
+/*    max-width: 100%;*/
+/*    display: block;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*    margin-top: 20px;*/
+/*}*/
+
+/*.welcome-message h2 {*/
+/*    color: #ffffff;*/
+/*    font-size: 3rem;*/
+/*    line-height: 1;*/
+/*    font-weight: 700;*/
+/*    text-transform: uppercase;*/
+/*    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);*/
+/*    font-family: "Agency FB", serif;*/
+/*}*/
+
+/*.welcome-message h3 {*/
+/*    color: #ffffff;*/
+/*    font-size: 6rem;*/
+/*    line-height: 1;*/
+/*    font-weight: 700;*/
+/*    text-align: center;*/
+/*    text-transform: uppercase;*/
+/*    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);*/
+/*    font-family: "Agency FB", serif;*/
+/*}*/
+
+/*#welcome-world > #home-page {*/
+/*    width: 50%;*/
+/*    margin: auto;*/
+/*    text-align: center;*/
+/*}*/
+
+/*#home-page {*/
+/*    background-color: transparent;*/
+/*    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.3);*/
+/*    overflow: hidden;*/
+/*    border-radius: 10px;*/
+/*    padding: 3rem;*/
+/*    width: auto;*/
+/*}*/
+
+
+
+/*.car {*/
+/*    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);*/
+/*    margin-top: 20px;*/
+/*    padding: 50px;*/
+/*    margin-left: 50px;*/
+/*    background-position: right 35% bottom 45%;*/
+/*    box-sizing: border-box;*/
+/*    border-radius: 15px;*/
+/*    float: left;*/
+/*    height: auto;*/
+/*    color: rgb(255, 255, 255);*/
+/*}*/
+
+/*.image-wrap {*/
+/*    width: 250px;*/
+/*    height: 250px;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    border-radius: 50%;*/
+/*    overflow: hidden;*/
+/*    position: relative;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.image-wrap > img {*/
+/*    max-width: 100%;*/
+/*    max-height: 100%;*/
+/*}*/
+
+/*.car > h3 {*/
+/*    font-family: "Agency FB", serif;*/
+/*    font-size: 2.625rem;*/
+/*    font-weight: 700;*/
+/*    line-height: 1;*/
+/*    width: 100%;*/
+/*    overflow: hidden;*/
+/*    text-overflow: ellipsis;*/
+/*    transition: all 0.5s ease-out;*/
+/*    text-align: center;*/
+/*    text-transform: uppercase;*/
+/*}*/
+
+
+/*.car-content > h4 {*/
+/*    color: #00030a;*/
+/*    font-size: 1.5rem;*/
+/*    text-align: center;*/
+/*    font-weight: 700;*/
+/*    line-height: 1.2;*/
+/*}*/
+
+/*.rating {*/
+/*    unicode-bidi: bidi-override;*/
+/*    text-align: center;*/
+/*    direction: rtl;*/
+/*}*/
+
+/*.rating span {*/
+/*    font-size: 3rem;*/
+/*    padding: 4px;*/
+/*}*/
+
+/*.rating span:before {*/
+/*    content: "\2605";*/
+/*    position: absolute;*/
+/*    color: gold;*/
+/*}*/
+
+/*.details-btn {*/
+/*    background-color: #295160;*/
+/*    font-size: 1.4rem;*/
+/*    margin-top: 10px;*/
+/*    color: white;*/
+/*    padding: 0.9em 1.4em;*/
+/*    border-radius: 5px;*/
+/*    transition: background-color 0.3s;*/
+/*}*/
+
+/*.data-buttons {*/
+/*    font-size: 1.4rem;*/
+/*    padding-top: 20px;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.btn.details-btn:hover {*/
+/*    background-color: rgb(141, 41, 41);*/
+/*    color: white;*/
+/*}*/
+
+/*#home-page > h1 {*/
+/*    color: rgb(252, 168, 151);*/
+/*    text-align: center;*/
+/*    font-weight: 700;*/
+/*    font-size: 4rem;*/
+/*    font-family: "Agency FB", serif;*/
+/*}*/
+
+/*.no-articles {*/
+/*    color: white;*/
+/*    text-align: center;*/
+/*    font-weight: 700;*/
+/*    font-size: 3.75rem;*/
+/*    font-family: "Agency FB", serif;*/
+/*}*/

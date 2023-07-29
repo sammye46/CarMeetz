@@ -1,0 +1,158 @@
+/*html {*/
+/*    font-family: Arial, sans-serif;*/
+/*    font-size: 16px;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/**,*/
+/**::before,*/
+/**::after {*/
+/*    margin: 0 auto;*/
+/*    padding: 0;*/
+/*    box-sizing: inherit;*/
+/*    line-height: 1.3;*/
+/*}*/
+
+/*h1,*/
+/*h2,*/
+/*h4,*/
+/*h5,*/
+/*h6 {*/
+/*    padding: 0.2em 1rem;*/
+/*}*/
+
+/*p,*/
+/*div {*/
+/*    margin: 0 1em 0.5em 1em;*/
+/*}*/
+
+/*ol,*/
+/*ul {*/
+/*    margin: 0 1rem;*/
+/*}*/
+
+/*li {*/
+/*    list-style-position: inside;*/
+/*}*/
+
+/*button {*/
+/*    font-weight: bold;*/
+/*    padding: 0.2em;*/
+/*    margin: 0.2em;*/
+/*    border: 1px solid white;*/
+/*    border-radius: 0.3em;*/
+/*    background-color: transparent;*/
+/*}*/
+
+/*a {*/
+/*    margin: 0.2em;*/
+/*    text-decoration: none;*/
+/*    font-weight: bold;*/
+/*    color: inherit;*/
+/*}*/
+
+/*blockquote {*/
+/*    font-style: italic;*/
+/*    margin: 0.5em;*/
+/*}*/
+
+/*blockquote>cite {*/
+/*    display: block;*/
+/*    text-align: right;*/
+/*    margin: 0.5em 2em;*/
+/*    font-weight: bold;*/
+/*}*/
+/* Global Styles*/
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Heading Styles */
+h1,
+h2,
+h4,
+h5,
+h6 {
+    margin: 0.5em 1rem;
+    font-weight: bold;
+}
+
+/* Paragraph and Div Styles */
+p,
+div {
+    margin: 0.5em 1rem;
+}
+
+/* List Styles */
+ol,
+ul {
+    margin: 0.5em 1rem;
+}
+
+li {
+    list-style-position: inside;
+}
+
+/* Button Styles */
+button {
+    font-weight: bold;
+    padding: 0.5em 1em;
+    margin: 0.2em;
+    border: 1px solid white;
+    border-radius: 0.3em;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* Link Styles */
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #555;
+}
+
+/* Blockquote Styles */
+blockquote {
+    font-style: italic;
+    margin: 1em;
+}
+
+blockquote > cite {
+    display: block;
+    text-align: right;
+    margin: 0.5em 2em;
+    font-weight: bold;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    /* Add responsive styles here, if needed */
+}
