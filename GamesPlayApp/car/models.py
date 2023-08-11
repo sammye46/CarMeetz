@@ -1,7 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.db import models
-from django.core import validators
 
+
+from GamesPlayApp.events.models import Event
 from GamesPlayApp.profile_car.models import Profile
 
 # Create your models here.
@@ -49,3 +50,8 @@ class Car(models.Model):
         blank=True,
         null=True
     )
+
+    attending_events = models.ManyToManyField(
+        Event,
+        related_name='cars_attending',
+        blank=True)

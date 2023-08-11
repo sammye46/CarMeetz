@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('GamesPlayApp.common.urls')),
     path('car/', include('GamesPlayApp.car.urls')),
+    path('events/', include('GamesPlayApp.events.urls')),
     path('profile/', include('GamesPlayApp.profile_car.urls')),
 ]

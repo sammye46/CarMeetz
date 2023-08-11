@@ -6,7 +6,8 @@ class CarForm(forms.ModelForm):
         model = Car
         fields = ['brand', 'model', 'priority', 'image_url', 'summary']
         labels = {
-            'image_url': 'Image URL'
+            'image_url': 'Image URL',
+            'priority': 'Height'
         }
 
 

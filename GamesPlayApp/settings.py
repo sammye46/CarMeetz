@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'GamesPlayApp.common',
     'GamesPlayApp.profile_car',
     'GamesPlayApp.car',
+    'GamesPlayApp.events',
 ]
 
 MIDDLEWARE = [
