@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    {% if not events %}
+        <!-- Display paragraph: If there are no games-->
+        <section id="no-cars">
+            <p class="no-articles">No events added yet</p>
+        </section>
+        <!-- Inside the <nav> tag -->
+
+
+    {% else %}
+
+        <!-- Display div "game" with information about every game (if any)-->
+        <section id="welcome-world">
+            {% for event in events %}
+                <!-- first game-->
+                <div class="game">
+                    <div class="image-wrap">
+                        <!-- game image -->
+                        <img src="{{ event.image_url }}"
+                             alt="{{ event.brand }}">
+                    </div>
+                    <!-- game title -->
+                    <h3>{{ event.event_name }}</h3>
+                    <!-- game category-->
+                    <h1>{{ event.date }}</h1>
+                    <div class="data-buttons">
+                        <!-- game details button -->
+                        <a href="{% url 'event-details-page' event.pk %}" class="btn details-btn">Details</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </section>
+    {% endif %}
+
+{% endblock %}

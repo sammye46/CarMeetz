@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- details section -->
+    <section id="game-details">
+        <h1>Event Details</h1>
+        <div class="info-section">
+            <div class="game-header">
+                <!-- game image -->
+                <img class="game-img"
+                     src="{{ event.image_url }}"
+                     alt='game image'/>
+                <!-- title and rating -->
+
+                <p style="text-align: center; font-size: 12px; margin-bottom: -20px;">Date: {{ event.date }}</p>
+                <h1 style="text-align: center;">{{ event.event_name }}</h1>
+
+                <!-- Display attendees -->
+                <h2>Attendees:</h2>
+                <ul>
+                    {% for attendee in event.attendees.all %}
+                        {% if attendee.car_set.exists %}
+                            <li>{{ attendee }} - as a part of the show</li>
+                        {% else %}
+                            <li>{{ attendee }} - as a visitor</li>
+                        {% endif %}
+                    {% empty %}
+                        <li>No one</li>
+                    {% endfor %}
+                </ul>
+
+                <a class="button" style="display:inline-block; min-height: 40px;" href="{% url 'add-event-gallery-image' event.pk %}">Add link to photos</a>
+
+                <!-- User Review Form -->
+                <form method="post" style="display:inline-block;" action="{% url 'submit-review' event.pk %}">
+                    {% csrf_token %}
+                    {{ user_review_form.as_p }}
+                    <button type="submit" class="button">Submit Review</button>
+                </form>
+
+                <!-- Attend/Attending button -->
+                <form method="post" style="display:inline-block;" action="{% url 'attend-event' event.pk %}">
+                    {% csrf_token %}
+                    <button type="submit" class="button">
+                        {% if is_attending %}
+                            Stop Attending
+                        {% else %}
+                            Attend
+                        {% endif %}
+                    </button>
+                </form>
+
+                <button type="submit" style="display:inline-block;" class="button"><a href="{% url 'event-gallery' event.pk %}">View Gallery</a></button>
+            </div>
+
+            {% if event.user_id == request.user.id %}
+                <!-- Edit/Delete buttons for event creator -->
+                <div class="buttons">
+                    <a href="{% url 'edit-event-page' event.pk %}" class="button">Edit</a>
+                    <a href="{% url 'delete-event-page' event.pk %}" class="button">Delete</a>
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- User Reviews Section -->
+        <div class="user-reviews">
+            <h2>User Reviews:</h2>
+            <ul>
+                {% for review in event.userreview_set.all %}
+                    <li>
+                        <strong>{{ review.user.username }}:</strong> Rating: {{ review.rating }}<br>
+                        {{ review.review_text }}
+                    </li>
+                {% empty %}
+                    <li>No reviews yet</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endblock %}

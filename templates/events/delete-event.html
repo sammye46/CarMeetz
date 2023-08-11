@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+    <section id="delete-page" class="auth">
+        <form id="delete" method="post">
+            <div class="container">
+
+                <h1>Delete Event</h1>
+
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <input class="btn submit" type="submit" value="Delete Event">
+            </div>
+        </form>
+    </section>
+{% endblock %}

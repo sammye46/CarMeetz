@@ -4,7 +4,7 @@
     <!-- profile details section -->
     <section id="game-details">
         <h1>Profile Details</h1>
-        <div class="info-section">
+        <div class="info-section" style="min-height: 300px;">
             <div class="game-header">
 
                 {% if not request.user.profile_picture %}
@@ -17,8 +17,10 @@
 
 
                 <!-- user email -->
-                <p class="text">Email: {{ request.user.email }}</p>
+
                 <p class="text">Cars: {{ cars.count }}</p>
+                <p class="text">Username: {{ request.user }}</p>
+                <p class="text">Email: {{ request.user.email }}</p><br><br>
 
 
                 <!-- Edit/Delete buttons -->

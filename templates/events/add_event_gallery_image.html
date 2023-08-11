@@ -1,0 +1,18 @@
+<!-- In your add_event_gallery_image.html template -->
+
+{% extends 'base.html' %}
+{% block content %}
+    <section id="create-page" class="auth">
+        <div class="container">
+            <h1>Add Gallery Image to Event: {{ event.event_name }}</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input class="btn submit" type="submit">
+{#                <a href="{% url 'event-details-page' event.pk %}">Back to Event Details</a>#}
+
+            </form>
+
+        </div>
+    </section>
+{% endblock %}

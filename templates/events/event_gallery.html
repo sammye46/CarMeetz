@@ -1,0 +1,27 @@
+<!-- In your event_gallery.html template -->
+
+{% extends 'base.html' %}
+{% load static %}  <!-- Load the static tag -->
+{% block content %}
+    <link rel="stylesheet" href="{% static 'gallery.css' %}">  <!-- Include the CSS file -->
+    <section id="event-gallery">
+        <h1 class="gallery-heading" style="mix-blend-mode: difference">Gallery for Event: {{ event.event_name }}</h1>
+        {% if gallery_images %}
+            <section id="welcome-world" class="gallery-section" style="transform: translateX(-15%);">
+                {% for image in gallery_images %}
+                    <div class="gallery-item" style="border-radius: 8px;">
+                        <div class="image-wrap">
+                            <img src="{{ image.image_url }}" alt="Event Image">
+                        </div>
+                    </div>
+                {% endfor %}
+            </section>
+            <a href="{% url 'event-details-page' event.pk %}" class="back-link" style="color: white;">Back to Event Details</a>
+        {% else %}
+            <section id="no-pictures" class="no-content">
+                <p class="no-articles" style="mix-blend-mode: difference">No pictures yet</p>
+            </section>
+            <a href="{% url 'event-details-page' event.pk %}" class="back-link" style="color: white;">Back to Event Details</a>
+        {% endif %}
+    </section>
+{% endblock %}

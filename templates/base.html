@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles/style.css' %}">
     <title>CarMeetz</title>
+
 </head>
 
 <body>
@@ -18,24 +19,23 @@
 
         <!-- Navigation Bar -->
         <h1><a class="home" href="{% url 'home-page' %}">CarMeetz</a></h1>
-        <nav>
+        <nav class="navMen">
             {% if not profile %}
                 <!-- if the user has not created a profile -->
                 <a href="{% url 'create-profile' %}">Create Profile</a>
                 <a href="{% url 'login-profile' %}">Log in</a>
             {% elif profile and user.is_authenticated %}
                 <!-- if the user has created a profile -->
-                <a href="{% url 'dashboard-page' %}">Dashboard</a>
+                <a class="diffNav" href="{% url 'dashboard-page' %}">Owned cars</a>
+                <a href="{% url 'events-page' %}">Events</a>
                 <!-- Inside the <nav> tag -->
-                {% if not cars and request.path == '/dashboard/' %}
-                    <a href="{% url 'create-car-page' %}" class="add-car-link">
-                        Add Car
 
-                        <span class="arrow-icon"></span>
-                    </a>
-                {% else %}
-                    <a href="{% url 'create-car-page' %}">Add Car</a>
-                {% endif %}
+                <a href="{% url 'create-car-page' %}">Add Car</a>
+
+
+
+                <a href="{% url 'create-event-page' %}">Add Own Event</a>
+
 
                 <a href="{% url 'profile-details' pk=request.user.pk %}">Profile</a>
                 <a href="{% url 'logout-profile' %}">Log out</a>
